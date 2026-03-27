@@ -42,6 +42,7 @@ return top
 
 }
 
+
 func averageScore(students []Student)float64{
 total := 0
 for _, s := range students{
@@ -51,11 +52,11 @@ return float64(len(students)) /
 float64(len(students))
 
 }
-}
+
 
 
 func main(){
-Students := []Student{
+students := []Student{
 {"JOHN", 18,75},
 {"PETER", 17,62},
 {"DIVINE", 19,48},
@@ -67,13 +68,14 @@ for _, s := range students {
 fmt.Println("Name:", s.name)
 fmt.Println("Age",s.age)
 fmt.Println("Score", s.age)
-fmt.Println("Grade:",Grade(s.score))
+fmt.Println("Grade:", Grades(s.score))
 fmt.Println("-----------------------")
 
 }
 
-
-top := averageScore(students)
+top := highestScore(students)
+fmt.Println("Top Score",top.name, "Score", top.score)
+avg := averageScore(students)
 fmt.Println("Average score", avg)
 
 
@@ -81,7 +83,8 @@ studentMap := make(map[string]Student)
 for _, s := range students {
 studentMap[s.name]= s
 }
-name : "mary"
+
+name := "mary"
 if student, found := studentMap[name];
 found {
 fmt.Println("Found:", student)
@@ -89,3 +92,4 @@ fmt.Println("Found:", student)
 fmt.Println("student not found")
 }
 }
+
